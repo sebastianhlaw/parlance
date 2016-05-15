@@ -4,11 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return render_template('hello.html', title="Welcome", name="Chaps")
+  return render_template('hello.html', title="Welcome", name="Daniel")
 
-# @app.route('/child/')
-# def hello_kiddies():
-#     return 'Hello Kiddies!'
+@app.route('/child/')
+def hello_kiddies():
+  my_name = "Danny boy"
+  return render_template('hello.html', title="Welcome", name=my_name)
 
 if __name__ == '__main__':
     app.run(debug=True)
